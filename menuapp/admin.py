@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .forms import MenuItemForm
+from .models import MenuItem
+
+
+class MenuItemAdmin(admin.ModelAdmin):
+    form = MenuItemForm
+
+admin.site.register(MenuItem, MenuItemAdmin)
