@@ -9,7 +9,7 @@ register = template.Library()
 
 def draw_menu(menu_name):
     try:
-        items = MenuItem.objects.filter(parent=None, name=menu_name).order_by('id')
+        items = MenuItem.objects.filter(parent=None, name=menu_name).order_by('id').prefetch_related('children')
         return mark_safe(render_menu(items))
     except MenuItem.DoesNotExist:
         return ''

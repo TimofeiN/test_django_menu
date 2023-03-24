@@ -20,4 +20,4 @@ class NestOneMainOne(TemplateView):
 
 
 class NestTwoMainOne(TemplateView):
-    template_name = "menuapp/n2_m2.html"
+    template_name = "menuapp/n2_m1.html"
