@@ -1,8 +1,23 @@
 from django.shortcuts import render
+# from .models import MenuItem
+from django.views.generic import TemplateView
 
-from .models import MenuItem
+
+def index_view(request):
+    return render(request, 'menuapp/index.html')
 
 
-def menu(request, menu_name):
-    menu_items = MenuItem.objects.filter(menu_name=menu_name).select_related('parent')
-    return render(request, 'menu.html', {'menu_items': menu_items})
+class MainOne(TemplateView):
+    template_name = "menuapp/m1.html"
+
+
+class MainTwo(TemplateView):
+    template_name = "menuapp/m2.html"
+
+
+class NestOneMainOne(TemplateView):
+    template_name = "menuapp/n1_m1.html"
+
+
+class NestTwoMainOne(TemplateView):
+    template_name = "menuapp/n2_m2.html"
