@@ -24,6 +24,7 @@ urlpatterns = [
     path('', views.index_view, name='index'),
     path('1', views.MainOne.as_view(), name='m1'),
     path('2', views.MainTwo.as_view(), name='m2'),
+    path('3', views.MainTwo.as_view(), name='m3'),
     path('n1', views.NestOneMainOne.as_view(), name='nest_1'),
     path('n2', views.NestTwoMainOne.as_view(), name='nest_2'),
 
